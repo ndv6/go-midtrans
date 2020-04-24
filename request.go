@@ -2,13 +2,13 @@ package midtrans
 
 // ItemDetail : Represent the transaction details
 type ItemDetail struct {
-	ID           string `json:"id"`
-	Name         string `json:"name"`
-	Price        int64  `json:"price"`
-	Qty          int32  `json:"quantity"`
-	Brand        string `json:"brand,omitempty"`
-	Category     string `json:"category,omitempty"`
-	MerchantName string `json:"merchant_name,omitempty"`
+	ID           string  `json:"id"`
+	Name         string  `json:"name"`
+	Price        float64 `json:"price"`
+	Qty          int32   `json:"quantity"`
+	Brand        string  `json:"brand,omitempty"`
+	Category     string  `json:"category,omitempty"`
+	MerchantName string  `json:"merchant_name,omitempty"`
 }
 
 // CustAddress : Represent the customer address
@@ -38,8 +38,8 @@ type CustDetail struct {
 
 // TransactionDetails : Represent transaction details
 type TransactionDetails struct {
-	OrderID  string `json:"order_id"`
-	GrossAmt int64  `json:"gross_amount"`
+	OrderID  string  `json:"order_id"`
+	GrossAmt float64 `json:"gross_amount"`
 }
 
 // ExpiryDetail : Represent SNAP expiry details
@@ -69,7 +69,7 @@ type InstallmentDetail struct {
 
 // CreditCardDetail : Represent credit card detail
 type CreditCardDetail struct {
-	Secure          bool               `json:"secure,omitempty"`
+	Secure          string             `json:"secure,omitempty"`
 	TokenID         string             `json:"token_id"`
 	Bank            string             `json:"bank,omitempty"`
 	Bins            []string           `json:"bins,omitempty"`
@@ -79,7 +79,7 @@ type CreditCardDetail struct {
 	// indicate if generated token should be saved for next charge
 	SaveTokenID          bool   `json:"save_token_id,omitempty"`
 	SavedTokenIDExpireAt string `json:"saved_token_id_expired_at,omitempty"`
-	Authentication       bool   `json:"authentication,omitempty"`
+	Authentication       string `json:"authentication,omitempty"`
 }
 
 // PermataBankTransferDetail : Represent Permata bank_transfer detail
