@@ -76,7 +76,7 @@ type SnapResponse struct {
 	StatusCode    string   `json:"status_code"`
 	Token         string   `json:"token"`
 	RedirectURL   string   `json:"redirect_url"`
-	ErrorMessages []string `json:"error_messages"`
+	ErrorMessages []string `json:"error_messages,omitempty"`
 }
 
 // IrisBeneficiaryBanksResponse : Show list of supported banks in IRIS. https://iris-docs.midtrans.com/#list-banks
