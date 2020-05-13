@@ -115,9 +115,10 @@ type BCABankTransferDetailFreeText struct {
 
 // BCABankTransferDetail : Represent BCA bank_transfer detail
 type BCABankTransferDetail struct {
-	Bank     Bank                          `json:"bank"`
-	VaNumber string                        `json:"va_number"`
-	FreeText BCABankTransferDetailFreeText `json:"free_text"`
+	Bank           Bank                          `json:"bank"`
+	VaNumber       string                        `json:"va_number"`
+	FreeText       BCABankTransferDetailFreeText `json:"free_text"`
+	SubCompanyCode string                        `json:"sub_company_code"`
 }
 
 // MandiriBillBankTransferDetail : Represent Mandiri Bill bank_transfer detail
@@ -222,16 +223,17 @@ type ChargeReqWithMap map[string]interface{}
 
 // SnapReq : Represent SNAP API request payload
 type SnapReq struct {
-	TransactionDetails TransactionDetails `json:"transaction_details"`
-	EnabledPayments    []PaymentType      `json:"enabled_payments"`
-	Items              *[]ItemDetail      `json:"item_details,omitempty"`
-	CustomerDetail     *CustDetail        `json:"customer_details,omitempty"`
-	Expiry             *ExpiryDetail      `json:"expiry,omitempty"`
-	CreditCard         *CreditCardDetail  `json:"credit_card,omitempty"`
-	Gopay              *GopayDetail       `json:"gopay,omitempty"`
-	CustomField1       string             `json:"custom_field1"`
-	CustomField2       string             `json:"custom_field2"`
-	CustomField3       string             `json:"custom_field3"`
+	TransactionDetails TransactionDetails    `json:"transaction_details"`
+	EnabledPayments    []PaymentType         `json:"enabled_payments"`
+	Items              *[]ItemDetail         `json:"item_details,omitempty"`
+	CustomerDetail     *CustDetail           `json:"customer_details,omitempty"`
+	Expiry             *ExpiryDetail         `json:"expiry,omitempty"`
+	CreditCard         *CreditCardDetail     `json:"credit_card,omitempty"`
+	Gopay              *GopayDetail          `json:"gopay,omitempty"`
+	CustomField1       string                `json:"custom_field1"`
+	CustomField2       string                `json:"custom_field2"`
+	CustomField3       string                `json:"custom_field3"`
+	BCAVA              BCABankTransferDetail `json:"bca_va"`
 }
 
 // CustomExpiry : Represent Core API custom_expiry
