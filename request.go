@@ -116,9 +116,9 @@ type BCABankTransferDetailFreeText struct {
 // BCABankTransferDetail : Represent BCA bank_transfer detail
 type BCABankTransferDetail struct {
 	Bank           Bank                          `json:"bank"`
-	VaNumber       string                        `json:"va_number"`
+	VaNumber       string                        `json:"va_number,omitempty"`
 	FreeText       BCABankTransferDetailFreeText `json:"free_text"`
-	SubCompanyCode string                        `json:"sub_company_code"`
+	SubCompanyCode string                        `json:"sub_company_code,omitempty"`
 }
 
 // MandiriBillBankTransferDetail : Represent Mandiri Bill bank_transfer detail
