@@ -233,7 +233,7 @@ type SnapReq struct {
 	CustomField1       string                `json:"custom_field1"`
 	CustomField2       string                `json:"custom_field2"`
 	CustomField3       string                `json:"custom_field3"`
-	BCAVA              BCABankTransferDetail `json:"bca_va"`
+	BCAVA              BCABankTransferDetail `json:"bca_va,omitempty"`
 }
 
 // CustomExpiry : Represent Core API custom_expiry
